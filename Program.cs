@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
-using Microsoft.SqlServer.Server;
 using NUnit.Framework;
 
 namespace PrettyNumber
@@ -155,6 +151,7 @@ namespace PrettyNumber
 
     class Program
     {
+        // ReSharper disable once UnusedParameter.Local
         static void Main(string[] args)
         {
             Console.WriteLine(PrettyNumber.Format(303));
@@ -190,6 +187,12 @@ namespace PrettyNumber
             Assert.AreEqual("341B", PrettyNumber.Format(341));
         }
 
+
+        [Test]
+        public void Print342BTest()
+        {
+            Assert.AreEqual("342B", PrettyNumber.Format(342));
+        }
         [Test]
         public void Print1GBTest()
         {
